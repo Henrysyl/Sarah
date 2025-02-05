@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Said Yes!</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Sunset cliff background */
+    body {
+      background: linear-gradient(to bottom, #ff6b6b, #ff8e8e, #ffafaf, #ffd3d3);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Cliff styling */
+    .cliff {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: #6b4f4f;
+      clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Animated flower */
+    .flower {
+      position: absolute;
+      bottom: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .stem {
+      width: 8px;
+      height: 150px;
+      background: #2d5a27;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .bloom {
+      position: absolute;
+      top: -80px;
+      left: -40px;
+      animation: sway 4s ease-in-out infinite;
+    }
+
+    .petals {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    .petal {
+      width: 30px;
+      height: 40px;
+      background: #ff3366;
+      border-radius: 50%;
+      position: absolute;
+      transform-origin: bottom center;
+    }
+
+    /* Petal positions */
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-10px); }
+    .petal:nth-child(2) { transform: rotate(45deg) translateY(-10px); }
+    .petal:nth-child(3) { transform: rotate(90deg) translateY(-10px); }
+    .petal:nth-child(4) { transform: rotate(135deg) translateY(-10px); }
+    .petal:nth-child(5) { transform: rotate(180deg) translateY(-10px); }
+    .petal:nth-child(6) { transform: rotate(225deg) translateY(-10px); }
+    .petal:nth-child(7) { transform: rotate(270deg) translateY(-10px); }
+    .petal:nth-child(8) { transform: rotate(315deg) translateY(-10px); }
+
+    /* Flower center */
+    .center {
+      width: 20px;
+      height: 20px;
+      background: #ffd700;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Animations */
+    @keyframes sway {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    /* Floating text */
+    .message {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Audio styling (hidden) */
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <div class="message">Thank You for Being My Valentine! 💖</div>
+  <div class="cliff"></div>
+  
+  <!-- Animated Flower -->
+  <div class="flower">
+    <div class="stem"></div>
+    <div class="bloom">
+      <div class="petals">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio autoplay loop>
+    <source src="all_of_me.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
